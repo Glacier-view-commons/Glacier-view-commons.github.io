@@ -1,5 +1,11 @@
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 
+* {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
 html,
 button,
 input,
@@ -93,11 +99,13 @@ body {
     background: #324B76;
 }
 
-.main aside a:link {
+.main aside a:link,
+#mc_embed_signup a:link {
     color: #C5E5FF;
 }
 
-.main aside a:visited {
+.main aside a:visited,
+#mc_embed_signup a:visited {
     color:#BA83FF;
 }
 
@@ -171,10 +179,44 @@ nav a:hover {
    ========================================================================== */
 
 
+/*/////////////////////////////////////////////////
+Mail Chimp Form Style
+/////////////////////////////////////////////////*/
 
+#mc_embed_signup {
+    background-color: #41685A;
+    border-top: 20px solid #264238;
+    padding: 20px;
+    color: white;
+    font-size: 1.2em;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+}
 
+.asterisk {
+    color:#880523;
+    font-size: 2em;
+}
 
-
+.mc-field-group {
+    background-color: white;
+    color: #000;
+    padding: 5px;
+}
+.mc-field-group label {
+    width: 30%;
+    display: inline-block;
+    text-align: right;
+}
+.mc-field-group input {
+    width: 68%;
+    border-width: 0 0 2px 0;
+    border-color: #555;
+    border-style:dashed;
+}
+.mc-field-group input:focus {
+    border-style: solid;
+    outline: none;
+}
 
 
 
@@ -260,7 +302,7 @@ nav a:hover {
 
     .main aside {
         float: right;
-        width: 28%;
+        width: 40%;
     }
 
     .main .left {
