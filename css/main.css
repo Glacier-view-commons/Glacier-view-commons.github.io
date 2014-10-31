@@ -185,7 +185,7 @@ nav a:hover {
 .main aside {
     color: white;
     word-break: break-all;
-    padding: 0px 5% 10px;
+    padding: 0px 5% 30px;
 }
 
 .footer-container footer {
@@ -238,8 +238,11 @@ Mail Chimp Form Style
 .mc-field-group label::after {
     content: ':';
 }
-.mc-field-group input {
+.mc-field-group input,
+.mc-field-group textarea {
     width: 68%;
+}
+.mc-field-group input {
     border-width: 0 0 1px 0;
     border-color: #555;
     border-style:solid;
