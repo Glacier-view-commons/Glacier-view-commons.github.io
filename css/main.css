@@ -1,5 +1,7 @@
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 
+@import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic|Roboto+Slab);
+
 * {
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -55,6 +57,10 @@ textarea {
     resize: vertical;
 }
 
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6 .h6 {
+    font-family: 'Roboto Slab', serif;
+}
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -62,9 +68,14 @@ textarea {
     padding: 0.2em 0;
 }
 
-.main img {
+.main img,
+.header-container img {
     max-width: 100%;
     width: auto;
+}
+
+.hide {
+    display: none;
 }
 
 /* ===== Initializr Styles ==================================================
@@ -72,12 +83,17 @@ textarea {
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 20px/1.5 'Crimson Text', Helvetica, Helvetica Neue, Arial;
 }
 
 .wrapper {
     width: 90%;
     margin: 0 5%;
+}
+
+.header-container .wrapper {
+    width: 100%;
+    margin: 0;
 }
 
 /* ===================
@@ -100,17 +116,27 @@ body {
 }
 
 .main aside a:link,
-#mc_embed_signup a:link {
+.footer-container a:link {
     color: #C5E5FF;
 }
 
 .main aside a:visited,
-#mc_embed_signup a:visited {
+.footer-container a:visited {
     color:#BA83FF;
 }
 
 .title {
     color: white;
+}
+
+/* button */
+
+input[type="submit"] {
+    border: none;
+    background-color: #324B76;
+    color: white;
+    padding: 10px 15px;
+    border-bottom: solid 5px #1C3052;
 }
 
 /* ==============
@@ -158,6 +184,7 @@ nav a:hover {
 
 .main aside {
     color: white;
+    word-break: break-all;
     padding: 0px 5% 10px;
 }
 
@@ -183,18 +210,18 @@ nav a:hover {
 Mail Chimp Form Style
 /////////////////////////////////////////////////*/
 
-#mc_embed_signup {
-    background-color: #41685A;
-    border-top: 20px solid #264238;
-    padding: 20px;
-    color: white;
-    font-size: 1.2em;
-    box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+.mc_embed_signup input[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.indicates-required {
+    text-align: right;
 }
 
 .asterisk {
     color:#880523;
-    font-size: 2em;
 }
 
 .mc-field-group {
@@ -206,21 +233,33 @@ Mail Chimp Form Style
     width: 30%;
     display: inline-block;
     text-align: right;
+    font-size: .75em;
+}
+.mc-field-group label::after {
+    content: ':';
 }
 .mc-field-group input {
     width: 68%;
-    border-width: 0 0 2px 0;
+    border-width: 0 0 1px 0;
     border-color: #555;
-    border-style:dashed;
+    border-style:solid;
 }
 .mc-field-group input:focus {
-    border-style: solid;
+    border-style: dotted;
     outline: none;
 }
 
 
 
+/*/////////////////////////////////////////////////
+Page elements
+/////////////////////////////////////////////////*/
 
+.lead {
+    font-size: 1.4em;
+    line-height: 1.5;
+    font-style: italic;
+}
 
 
 
@@ -278,6 +317,19 @@ Mail Chimp Form Style
                 box-shadow: 0 5px 10px #aaa;
     }
 
+    .mc_embed_signup input[type="submit"] {
+        float: right;
+    }
+    .mc-field-group label {
+        font-size: 1em;
+    }
+
+    .mc_embed_signup input[type="submit"] {
+        display: block;
+        width: auto;
+        margin-bottom: 0;
+    }
+
 /* ============
     WIDE: Menu
    ============ */
@@ -294,6 +346,16 @@ Mail Chimp Form Style
 /* ============
     WIDE: Main
    ============ */
+
+   .main {
+    position: relative;
+   }
+
+    .main .overlay {
+        position: absolute;
+        padding: 0 20px 5px;
+        background-color: rgba(255,255,255,.75);
+    }
 
     .main article {
         float: left;
@@ -337,10 +399,13 @@ Mail Chimp Form Style
     Maximal Width
    =============== */
 
-    .wrapper {
+    .wrapper,
+    .header-container .wrapper {
         width: 1026px; /* 1140px - 10% for margins */
         margin: 0 auto;
     }
+
+
 }
 
 /* ==========================================================================
